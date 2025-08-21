@@ -14,42 +14,68 @@ function getHumanChoice(){
 }
 
 function playRound(humanChoice, computerChoice, humanScore) {
+    
     if (humanChoice === "rock" && computerChoice === "scissors"){
         humanScore++;
-        console.log(`You win! Score: ${humanScore}`);
+        div.textContent = `Computer choice: ${computerChoice}. You win! Score: ${humanScore}`;
         return humanScore;
     }else if (humanChoice === "scissors" &&  computerChoice === "paper"){
         humanScore++;
-        console.log(`You win! Score: ${humanScore}`);
+        div.textContent = `Computer choice: ${computerChoice}. You win! Score: ${humanScore}`;
         return humanScore;
     }else if(humanChoice === "paper" && computerChoice === "rock"){
         humanScore++;
-        console.log(`You win! Score: ${humanScore}`);
+        div.textContent = `Computer choice: ${computerChoice}. You win! Score: ${humanScore}`;
         return humanScore;
     }else if (humanChoice != computerChoice){
         humanScore--;
-        console.log(`You loose!!! Score: ${humanScore}`);
+        div.textContent = `Computer choice: ${computerChoice}. You loose! Score: ${humanScore}`;
         return humanScore;
     }
-    console.log("Equallity");
+
+    div.textContent = `Computer choice: ${computerChoice}. Equallity. Score: ${humanScore}`;
     return humanScore;
 }
 
-function playGame(){
-    let humanScore = 0
-    for(let i = 0; i < 5; i++){
-        const humanSelection = getHumanChoice();
-        const computerSelection = getComputerChoice();
 
-        console.log(humanSelection)
-        console.log(computerSelection)
-        humanScore = playRound(humanSelection, computerSelection, humanScore);
-    }
 
-    console.log(`Final score ${humanScore}`)
+const buttonList = document.querySelector(".buttons");
+const bodyEl = document.querySelector("body");
+const div = document.createElement("div");
+bodyEl.appendChild(div);
+gameOver = false;
+let userScore = 0
+if (gameOver === true){
+    div.textContent = ""
+    gameOver = false;
 }
 
+buttonList.addEventListener("click", function(event){
+    const selectedButtonId = event.target.id;
+    const computerSelection = getComputerChoice();
+
+    switch(selectedButtonId){
+        case "rock":
+            userScore = playRound("rock", computerSelection, userScore);
+            break;
+        case "paper":
+            userScore = playRound("paper", computerSelection, userScore);
+            break;
+        case "scissors":
+            userScore = playRound("scissors", computerSelection, userScore);
+            break;
+    }
+    if (userScore === 5){
+        div.textContent = "WOOOOW !!! YOU WON !!!"
+        userScore = 0
+        gameOver = true;
+    }else if (userScore === -5){
+        div.textContent = "YOU LOST! Maybe next time."
+        userScore = 0
+        gameOver = true;
+    }
+})
 
 
 
-playGame()
+
