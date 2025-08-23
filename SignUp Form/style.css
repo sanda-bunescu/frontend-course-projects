@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.signup-page{
+    display: flex;
+}
+
+.image-container{
+    position: relative;
+    height: 100vh;
+}
+
+.image-container img{
+    width: 100%;
+    height: 100%;
+}
+
+#logo-container {
+    position: absolute;
+    top: 50%; /* stays centered */
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: aliceblue;
+    padding: 20px 0;
+}
+
+#logo-container div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#logo-img{
+    width: 80px;
+}
+
+.form-container{
+    font-family: 'Montserrat', 'Roboto', sans-serif;
+    background-color: #f9fafb;
+}
+
+.form-container div{
+    display: block;
+}
+
+.intro-div{
+    margin: 7%;
+    margin-top: 10%;
+}
+
+.intro-div #secondary-text{
+    margin-top: 5%;
+}
+
+
+.white-bg{
+    background-color: #fffefe;
+    box-shadow: 10px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.white-bg .fields{
+    padding: 20px 0px;
+    margin: 0% 7%;
+    margin-right: 40%;
+}
+
+form .input-fields{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.input-fields div{
+    display: flex;
+    flex-direction: column;
+    padding: 10px 50px 10px 0px;
+}
+
+form button{
+    margin: 3% 0% 0% 7%;
+    padding: 7px 50px;
+    border: 0px;
+    border-radius: 10px;
+    color: white;
+    background-color: #596d48;
+
+}
+
+form p{
+    margin: 2% 0% 0% 7%;
+}
+
+form p a{
+    color: #596d48;
+    text-decoration: none;
+}
+
+input{
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    height: 25px;
+    width: 200px;
+}
+
+.input-fields label{
+    font-size: 10px;
+}
