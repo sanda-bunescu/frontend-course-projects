@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+</head>
+<body>
+  <h1>Task organizer</h1>
+  <dialog id="dialog-container">
+    <div id="dialog-content">
+      <div>
+        <h1 id="dialog-title"></h1>
+        <p id="dialog-description"></p>
+        <button id="delete-todo">Delete Task</button>
+      </div>
+      <button id="dialog-close-btn">Close</button>
+    </div>
+  </dialog>
+
+  <dialog id="dialog-add-todo">
+    <form action="mybackend.com" method="post">
+      <div>
+        <label for="todo-title">Task Title</label>
+        <input type="text" id="todo-title">
+      </div>
+      <div>
+        <label for="todo-description">Task Description</label>
+        <textarea rows="5" cols="50" id="todo-description"></textarea>
+      </div>
+      <div id="form-error" style="color:red; display:none;"></div>
+      <div>
+        <button type="submit" id="form-submit-btn">Submit</button>
+        <button type="reset" id="close-form-btn">Cancel</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div id="container">
+    <div id="project-container">
+      <div id="projects-header"> 
+        <h2>Projects</h2>
+        <button id="add-project-btn">+</button>
+      </div>
+      <div id="project-list"></div>
+    </div>
+    <div id="todo-container">
+      <div id="todo-list-header"> 
+        <h2>To Do List</h2>
+        <button id="add-todo-btn"> Add Task +</button>
+      </div>
+      <div id="todo-list"></div>
+    </div>
+  </div>
+</body>
+</html>
